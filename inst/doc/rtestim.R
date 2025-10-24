@@ -10,6 +10,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.asp = 0.618,
   fig.width = 6,
+  fig.align = "center",
   out.width = "80%"
 )
 
@@ -37,10 +38,13 @@ plot(mod_cv, which_lambda = "lambda.1se")
 observation_incr <- rpois(101, lambda = 2)
 observation_incr[observation_incr == 0] <- 1
 observation_time <- cumsum(observation_incr)
+ggplot(data.frame(x = observation_time, case_counts), aes(x, case_counts)) +
+  geom_point(colour = "cornflowerblue") +
+  labs(x = "Time", y = "Case Counts")
 
 ## ----fig.align='center'-------------------------------------------------------
 mod <- estimate_rt(observed_counts = case_counts, x = observation_time)
-plot(mod) + coord_cartesian(ylim = c(0, 5))
+plot(mod)
 
 ## ----fig.align='center'-------------------------------------------------------
 mod <- estimate_rt(observed_counts = case_counts, korder = 0, nsol = 20)

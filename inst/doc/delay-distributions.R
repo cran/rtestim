@@ -5,6 +5,7 @@ library(dplyr)
 library(nnet)
 library(forcats)
 library(tidyr)
+library(Matrix)
 theme_set(theme_bw())
 
 ## ----include = FALSE----------------------------------------------------------
@@ -32,7 +33,7 @@ plot(can_default) + coord_cartesian(ylim = c(0.5, 2))
 ## ----cancov-nonpar------------------------------------------------------------
 # Data from Backer et al.
 delay <- read.csv("backer.csv") |>
-  filter(delay > 0) |>
+  filter(delay >= 0) |>
   select(-delay)
 delay <- rowSums(delay)
 delay <- delay / sum(delay)
@@ -57,21 +58,20 @@ plot(can_nonpar) + coord_cartesian(ylim = c(0.5, 2))
 ## ----cdfs, echo = FALSE-------------------------------------------------------
 cdfs <- data.frame(
   x = 0:20,
-  default = pgamma(0:20, shape = 2.5, scale = 2.5),
-  backer = cumsum(c(0, delay, rep(0, 20 - length(delay))))
+  default = cumsum(discretize_gamma(0:20, shape = 2.5, scale = 2.5)),
+  backer = cumsum(c(delay, rep(0, 21 - length(delay))))
 )
 ggplot(cdfs |> pivot_longer(-x), aes(x, value, color = name)) +
   geom_step() +
-  scale_y_continuous(expand = expansion(0)) +
-  scale_color_manual(values = c("orange", "cornflowerblue"), name = "")
+  scale_y_continuous(expand = expansion(0), limits = c(0, 1)) +
+  scale_color_manual(values = c("darkorange", "cornflowerblue"), name = "")
 
 ## ----backer-matrix, eval=FALSE------------------------------------------------
 # # library(Matrix)
 # n <- nrow(cancovid)
-# backer_delay <- c(0, delay, rep(0, n - length(delay) - 1))
+# backer_delay <- c(delay, rep(0, n - length(delay) - 1))
 # delay_mat <- matrix(0, n, n)
-# delay_mat[1,1] <- 1
-# for (iter in 2:n) delay_mat[iter, 1:iter] <- rev(backer_delay[1:iter])
+# for (iter in 1:n) delay_mat[iter, 1:iter] <- rev(backer_delay[1:iter])
 # delay_mat <- drop0(as(delay_mat, "CsparseMatrix")) # make it sparse, not necessary
 # delay_mat <- delay_mat / rowSums(delay_mat) # renormalize
 
@@ -257,11 +257,9 @@ delay_dstns_can |>
   scale_y_continuous(expand = expansion(c(0, 0.05)))
 
 ## ----tvar-matrix, message=FALSE-----------------------------------------------
-library(Matrix)
 n <- nrow(cancovid)
 delay_mat <- matrix(0, n, n)
-delay_mat[1,1] <- 1
-for (iter in 2:n) {
+for (iter in 1:n) {
   current_var <- can_pred_class$var[iter]
   current_pars <- delay_dstns_can |> filter(type == current_var)
   delay <- discretize_gamma(0:(iter - 1), current_pars$shape, current_pars$scale)

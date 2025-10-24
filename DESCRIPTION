@@ -1,7 +1,7 @@
 Type: Package
 Package: rtestim
 Title: Estimate the Effective Reproductive Number with Trend Filtering
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
     person("Daniel J.", "McDonald", , "daniel@stat.ubc.ca", role = c("aut", "cre", "cph")),
     person("Jiaping", "Liu", , "jiaping.liu@stat.ubc.ca", role = "aut"),
@@ -30,10 +30,10 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
 NeedsCompilation: yes
-Packaged: 2025-07-01 17:18:31 UTC; dajmcdon
+Packaged: 2025-10-24 16:18:09 UTC; dajmcdon
 Author: Daniel J. McDonald [aut, cre, cph],
   Jiaping Liu [aut],
   Zhenglun Cai [ctb]
 Maintainer: Daniel J. McDonald <daniel@stat.ubc.ca>
 Repository: CRAN
-Date/Publication: 2025-07-05 18:50:02 UTC
+Date/Publication: 2025-10-24 18:50:02 UTC
