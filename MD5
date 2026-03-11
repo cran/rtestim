@@ -1,7 +1,7 @@
-a95400e28a8bc33ba844ddac61f58523 *DESCRIPTION
+4ac44c7ef7d145ee607b7ef01e7b5c1c *DESCRIPTION
 520c9e63413522fd8ba5bb4e4e50b17b *LICENSE
 6ac689993f6b2f907a848159c9135823 *NAMESPACE
-8c733a4d984668074d4041a7bed5498e *NEWS.md
+7a32ccae821740c96463ee01bc7c1a81 *NEWS.md
 ba776118f4ee8e2462c7a1a9a0e3f7f6 *R/RcppExports.R
 c79e345b6fe502187ee52e0e21186a51 *R/confband.R
 d22fce2f86146f6aa32dc6e9d9b8e7de *R/cv_estimate_rt.R
@@ -21,15 +21,12 @@ e1f98f4dc26584438426dd94a05fb029 *R/methods.R
 f0e1a590d8f841f28a28c66257fa05e6 *R/rtestim-package.R
 563088df7b86a14ced62a83b331e3c7b *R/utils-enlist.R
 ed2b83aef619f5b2d0f7bb0bf872a2c0 *README.md
-1bf18d9c216b8d95033f0bd2fe2906b2 *build/partial.rdb
-d8e365a5a584ab3e64ef9d44f7e67cc4 *build/vignette.rds
+76e123f5dcc8dee07678412adc0a2a84 *build/partial.rdb
+b8190ac0bf7f9dc181dab0bc7915e96d *build/vignette.rds
 18b8eca8164193abc6edffde46d53435 *data/cancovid.rda
-2991c410265c57529fba9db05b9443f3 *inst/doc/delay-distributions.R
-c32edced63f49370d227742bbb76ccd7 *inst/doc/delay-distributions.Rmd
-b015ef870a0e60bd6754bf2cc9abe620 *inst/doc/delay-distributions.html
 55650a1ce209630fcfa28f1fa4cc24ab *inst/doc/rtestim.R
 45c181dc847ec075731d85da05599b52 *inst/doc/rtestim.Rmd
-fcffc8bc1dddd672e643d65f07ac0462 *inst/doc/rtestim.html
+f136f6150a5a4c30d231e3f22bbfeb84 *inst/doc/rtestim.html
 5d9a64e4ea52d8e259244a00a52f68d1 *inst/include/rtestim.h
 6e0107d2864af081d68e2b6608ded719 *inst/include/rtestim_RcppExports.h
 08e448640bbbb727829fd4ff1f8aeb94 *inst/logo/logo.R
@@ -41,7 +38,7 @@ b775e6df58ebf388621e0c6a54aceaa2 *man/cv_estimate_rt.Rd
 df7f6de1dedaabae363400b00d6dfc48 *man/discretize_gamma.Rd
 1d089090f4a939f091ffb0a700215d0e *man/estimate_rt.Rd
 d452f4efc2287e954f00a84148124273 *man/figures/README-cv-estimate-1.png
-5e9c168064fd6f97a320ec46f78cab52 *man/figures/README-full-fit-1.png
+3a2cfd077d5de3e52bdb1f60b7f12e47 *man/figures/README-full-fit-1.png
 70b4a196ee28a118401a98e3317908aa *man/figures/README-plot-data-1.png
 bde983f8533fc4b96fd9c7cbc6ef0a31 *man/figures/logo.png
 b1558f8586468ac0c38a07d69cf593ea *man/fitted.cv_poisson_rt.Rd
@@ -51,7 +48,7 @@ ca3e1909f5c3e599a10f1897223b517d *man/plot.poisson_rt.Rd
 171ca480ae4817e075480b40b76e8d34 *man/plot.rt_confidence_band.Rd
 49146c3c65b5be77642c043bab8ecdb9 *man/predict.cv_poisson_rt.Rd
 35cdf7af4a3891aa66c59f253d9ca779 *man/predict.poisson_rt.Rd
-1d2353babacb6eac9e1195a07185d78a *src/RcppExports.cpp
+adb25da2c9f343e8c6911059b8bf740a *src/RcppExports.cpp
 92dd736acd179d6e9fd69ee8c1ef8203 *src/admm.cpp
 67eac07250148af251b2434aafbf651f *src/admm.h
 5ea586ca3101a462197dd75a38886d83 *src/dptf.h
@@ -72,9 +69,4 @@ ddf87497a9d50294531d575b64f39599 *tests/testthat/test-create_lambda.R
 3f32b6848628b014f2051dfb1d0dd7d7 *tests/testthat/test-interpolate_lambda.R
 65eee9f47a451ccaa26f28a2b62b8f02 *tests/testthat/test-interpolate_mat.R
 620e6cdedf0ea73c8a855c50b5e8d297 *tests/testthat/test-period.R
-42e079c9ce11d6de34fbece27b361d73 *vignettes/backer.csv
-90eb7df84117640e0aebf398ba8329a8 *vignettes/delay-distns-byvar.rds
-c32edced63f49370d227742bbb76ccd7 *vignettes/delay-distributions.Rmd
-5829b0848bc73c96610fa94d7445269f *vignettes/duotang-counts.rds
 45c181dc847ec075731d85da05599b52 *vignettes/rtestim.Rmd
-d655e88dbf19d119d4f696cb3e89a99d *vignettes/xu-etal-DATA_RAW.xlsx
